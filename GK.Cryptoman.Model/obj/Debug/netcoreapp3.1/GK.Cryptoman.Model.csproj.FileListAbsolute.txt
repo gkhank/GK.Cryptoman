@@ -1,0 +1,8 @@
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\bin\Debug\netcoreapp3.1\GK.Cryptoman.Model.deps.json
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\bin\Debug\netcoreapp3.1\GK.Cryptoman.Model.dll
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\bin\Debug\netcoreapp3.1\GK.Cryptoman.Model.pdb
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.AssemblyInfoInputs.cache
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.AssemblyInfo.cs
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.dll
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.pdb
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.csproj.CoreCompileInputs.cache

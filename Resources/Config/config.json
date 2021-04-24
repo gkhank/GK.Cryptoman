@@ -1,0 +1,11 @@
+{
+  "Connections": {
+    "BinanceAPI": {
+      "APIKey": "jaMP84dFgLy9bXpwoaYJGp0KKozrA2fBl9YUa0qHyizYOwZPRIWKgZ1acX8b8xn3",
+      "APISecret": "uBuyJ5HIlFRQ5ZxduWrh8kbeWVlgBmeaHK8PBn3OZP7gRIWi1yoLMA3EhNGbpA16",
+      "SpotAPIUrl": "https://testnet.binance.vision/api",
+      "SpotAPIWS": "wss://testnet.binance.vision/ws",
+      "SpotAPIStream": "wss://testnet.binance.vision/stream"
+    }
+  }
+}
