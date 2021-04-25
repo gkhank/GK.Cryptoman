@@ -5,7 +5,8 @@
       "APISecret": "uBuyJ5HIlFRQ5ZxduWrh8kbeWVlgBmeaHK8PBn3OZP7gRIWi1yoLMA3EhNGbpA16",
       "SpotAPIUrl": "https://testnet.binance.vision/api",
       "SpotAPIWS": "wss://testnet.binance.vision/ws",
-      "SpotAPIStream": "wss://testnet.binance.vision/stream"
+      "SpotAPIStream": "wss://testnet.binance.vision/stream",
+      "UseProxy": false
     }
   }
 }

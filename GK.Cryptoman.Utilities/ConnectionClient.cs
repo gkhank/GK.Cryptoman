@@ -1,5 +1,4 @@
-﻿using GK.Cryptoman.Model.Code;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -40,8 +39,6 @@ namespace GK.Cryptoman.Utilities
 
         private WebProxy SelectProxy()
         {
-#warning TODO: Implement proxy selection according to this.GetAverage method with uptime response time and location data.
-
 
             String[] hosts = File.ReadAllLines(Path.Combine(ApplicationPath.ConfigDirectory, "proxy.txt"));
 
@@ -68,65 +65,29 @@ namespace GK.Cryptoman.Utilities
             return retval;
         }
 
-
-        public virtual T Get<T>(String url, Boolean useProxy = true)
+        protected T DoRequest<T>(HttpWebRequest request, object data, Boolean useProxy)
         {
-            return JsonConvert.DeserializeObject<T>(this.Get(url, useProxy));
-        }
 
-
-        public virtual String Get(String url, Boolean useProxy = true)
-        {
-            try
+            if (useProxy)
             {
-                if (url.EndsWith(".pdf") ||
-                    url.EndsWith(".tif") ||
-                    url.EndsWith(".png") ||
-                    url.EndsWith(".doc") ||
-                    url.EndsWith(".docx") ||
-                    url.EndsWith(".jpg") ||
-                    url.EndsWith(".jpeg") ||
-                    url.EndsWith(".eps"))
-                    throw new FormatException(String.Format("File type is not supported for html parsing '{0}'", url));
+                request.Proxy = this.Proxy;
 
+                CallResult result = this.DoCall(request, data);
 
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.AutomaticDecompression = DecompressionMethods.GZip;
-                request.Timeout = 10000;
-
-                if (useProxy)
+                //If call took more than 5 seconds force re-load proxy.
+                if (result.ProcessSpan > this.ExecutionTimeLimit && this.OnExecutionTimeLimitExceeded != null)
                 {
-                    request.Proxy = this.Proxy;
-
-                    CallResult result = this.DoCall(request);
-
-                    //If call took more than 5 seconds force re-load proxy.
-                    if (result.ProcessSpan > this.ExecutionTimeLimit && this.OnExecutionTimeLimitExceeded != null)
-                    {
-                        this.OnExecutionTimeLimitExceeded.Invoke(request, EventArgs.Empty);
-                    }
-
-                    return result.Content;
+                    this.OnExecutionTimeLimitExceeded.Invoke(request, EventArgs.Empty);
                 }
-                else
-                    return this.DoCall(request).Content;
 
+                return JsonConvert.DeserializeObject<T>(result.Content);
             }
-            catch (WebException wex)
-            {
-                //Force reload proxy if it fails
-                //EventLog.WriteEntry(this.ToString(), "Forcing proxy to reload due to WebException.", EventLogEntryType.Information);
-                this._proxy = null;
-                throw wex;
-            }
-            catch (FormatException fex)
-            {
-                throw fex;
-            }
+            else
+                return JsonConvert.DeserializeObject<T>(this.DoCall(request, data).Content);
 
         }
 
-        private CallResult DoCall(HttpWebRequest request)
+        private CallResult DoCall(HttpWebRequest request, Object data)
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
@@ -134,15 +95,20 @@ namespace GK.Cryptoman.Utilities
             using (Stream stream = response.GetResponseStream())
             using (StreamReader reader = new StreamReader(stream))
             {
+                if (request.Method == "POST")
+                {
+                    using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
+                    {
+                        string json = JsonConvert.SerializeObject(data);
+                        streamWriter.Write(json);
+                        streamWriter.Flush();
+                    }
+                }
+
                 String content = reader.ReadToEnd();
                 watch.Stop();
                 return new CallResult(content, watch.Elapsed);
             }
-        }
-
-        private RemoteProxy GetProxyFromSource(string url)
-        {
-            return JsonConvert.DeserializeObject<RemoteProxy>(this.Get(url, false));
         }
 
         protected class CallResult

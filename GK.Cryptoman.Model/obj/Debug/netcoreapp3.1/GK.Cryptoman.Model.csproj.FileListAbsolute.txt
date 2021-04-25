@@ -6,3 +6,4 @@ D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman
 D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.dll
 D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.pdb
 D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.csproj.CoreCompileInputs.cache
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Model\obj\Debug\netcoreapp3.1\GK.Cryptoman.Model.csprojAssemblyReference.cache

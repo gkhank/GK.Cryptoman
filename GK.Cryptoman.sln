@@ -14,14 +14,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GK.Cryptoman.Utilities", "G
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D6433BA-AFAA-4844-975E-4BEF6A737BC2}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		GK.Cryptoman.Web\GK.Cryptoman.Web.csproj = GK.Cryptoman.Web\GK.Cryptoman.Web.csproj
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GK.Cryptoman.Web", "GK.Cryptoman.Web\GK.Cryptoman.Web.csproj", "{999ECC77-07E2-4C89-AE54-B67120967DB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GK.Cryptoman.Model", "GK.Cryptoman.Model\GK.Cryptoman.Model.csproj", "{E2BA1D13-1E4D-4407-B2BC-C408B7374EA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GK.Cryptoman.Model", "GK.Cryptoman.Model\GK.Cryptoman.Model.csproj", "{E2BA1D13-1E4D-4407-B2BC-C408B7374EA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GK.Cryptoman.Tests", "GK.Cryptoman.Tests\GK.Cryptoman.Tests.csproj", "{65E5F876-E608-4D42-904E-98BC4286AE46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GK.Cryptoman.Tests", "GK.Cryptoman.Tests\GK.Cryptoman.Tests.csproj", "{65E5F876-E608-4D42-904E-98BC4286AE46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

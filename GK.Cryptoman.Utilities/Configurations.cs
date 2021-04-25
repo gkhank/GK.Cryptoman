@@ -42,6 +42,7 @@ namespace GK.Cryptoman.Utilities
         public string SpotAPIUrl { get; set; }
         public string SpotAPIWS { get; set; }
         public string SpotAPIStream { get; set; }
+        public bool UseProxy{ get; set; }
     }
 
     public class Connections

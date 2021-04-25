@@ -34,3 +34,4 @@ D:\Projects\GK.Cryptoman\GK.Cryptoman.Web\obj\Debug\netcoreapp3.1\GK.Cryptoman.W
 D:\Projects\GK.Cryptoman\GK.Cryptoman.Web\obj\Debug\netcoreapp3.1\GK.Cryptoman.Web.pdb
 D:\Projects\GK.Cryptoman\GK.Cryptoman.Web\obj\Debug\netcoreapp3.1\GK.Cryptoman.Web.genruntimeconfig.cache
 D:\Projects\GK.Cryptoman\GK.Cryptoman.Web\obj\Debug\netcoreapp3.1\GK.Cryptoman.Web.csproj.CopyComplete
+D:\Projects\GK.Cryptoman\GK.Cryptoman.Web\obj\Debug\netcoreapp3.1\GK.Cryptoman.Web.csprojAssemblyReference.cache

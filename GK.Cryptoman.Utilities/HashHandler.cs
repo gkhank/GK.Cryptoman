@@ -1,17 +1,19 @@
-﻿using System;
+﻿using GK.Cryptoman.Utilities;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
-public class HMAC_SHA256
+public class HashHandler
 {
     public static String GetHash(String text, String key)
     {
+
         // change according to your needs, an UTF8Encoding
         // could be more suitable in certain situations
         ASCIIEncoding encoding = new ASCIIEncoding();
 
         Byte[] textBytes = encoding.GetBytes(text);
-        Byte[] keyBytes = encoding.GetBytes(key);
+        Byte[] keyBytes = encoding.GetBytes(Configuration.Instance.Connections.BinanceAPI.APISecret);
 
         Byte[] hashBytes;
 
@@ -20,4 +22,9 @@ public class HMAC_SHA256
 
         return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
     }
-} 
+
+    public static String GetHash(Object value, String key)
+    {
+        return HashHandler.GetHash(value.ToString(), key);
+    }
+}

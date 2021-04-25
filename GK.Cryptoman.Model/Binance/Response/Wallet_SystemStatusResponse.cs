@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GK.Cryptoman.Model.Binance
 {
-    public class SystemStatusResponse
+    public class Wallet_SystemStatusResponse
     {
         [JsonProperty("status")]
         public int Status { get; set; }
