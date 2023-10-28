@@ -1,1 +1,14 @@
 ﻿.vs
+GK.Cryptoman.Tests/bin
+GK.Cryptoman.Tests/obj/Debug
+GK.Cryptoman.Tests/obj
+GK.Cryptoman.Utilities/bin
+GK.Cryptoman.Model/obj
+GK.Cryptoman.Model/bin
+GK.Cryptoman.Utilities/obj
+GK.Cryptoman.Web/bin
+GK.Cryptoman.Web/obj
+GK.Cryptoman.Model/obj
+GK.Cryptoman.Utilities/obj
+GK.Cryptoman.Web/bin
+GK.Cryptoman.Web/obj

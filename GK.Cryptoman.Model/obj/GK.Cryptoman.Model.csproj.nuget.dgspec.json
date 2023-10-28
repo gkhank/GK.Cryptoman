@@ -1,35 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj": {}
+    "E:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj": {
+    "E:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj",
+        "projectUniqueName": "E:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj",
         "projectName": "GK.Cryptoman.Model",
-        "projectPath": "D:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj",
+        "projectPath": "E:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj",
         "packagesPath": "C:\\Users\\gkhan\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\obj\\",
+        "outputPath": "E:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\gkhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -40,11 +41,12 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -62,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

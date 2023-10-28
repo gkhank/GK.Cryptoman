@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Lzi+P202Esp1gkY2QoYh1UTdh/+PhA0NzKUH/YHHMPLUxRyKhS7RrCo/ZMlE3kW2yMPF4Joz1zz3arFm3tBlmQ==",
+  "dgSpecHash": "IOoH8VIEdbnX22RaW0QuQIFWHK7lZnwx62XBk7HIedxMcjwXuQPl3R3lEtpXcwC+GQLHKIIy0n7v0bFDZx5wLQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj",
+  "projectFilePath": "E:\\Projects\\GK.Cryptoman\\GK.Cryptoman.Model\\GK.Cryptoman.Model.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\gkhan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\gkhan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }
