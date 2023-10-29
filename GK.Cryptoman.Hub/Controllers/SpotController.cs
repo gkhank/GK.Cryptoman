@@ -1,16 +1,12 @@
-using CryptoExchange.Net.Objects;
 using GK.Cryptoman.Hub.Model.Request;
-using GK.Cryptoman.Utilities.Shared.Exception;
+using GK.Cryptoman.Utilities.Shared.Model;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
-using System.ComponentModel.DataAnnotations;
-using ValidationException = GK.Cryptoman.Utilities.Shared.Exception.ValidationException;
 
 namespace GK.Cryptoman.Hub.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class SpotController : ControllerBase
+    [Route("[controller]/[action]")]
+    public class SpotController : BaseController
     {
         private readonly ILogger<SpotController> _logger;
 
@@ -19,21 +15,18 @@ namespace GK.Cryptoman.Hub.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public ActionResult<string> Get(string? spots)
-        {
-            var spotsCollection = new SpotRequest
-            {
-                Spots = spots?.Split(',')
-            };
 
-            _logger.LogInformation($"Logger works in {this}");
+        //Returns data for specified currencies from given date.
+        [HttpGet]
+        public ActionResult<string> Get([FromQuery]SpotRequest spotRequest)
+        {
+            _logger.LogInformation($"Logger works in Get");
             return Ok("some spots");
         }
 
+        //Returns data for all currencies from given date.
         [HttpGet]
-        [Route("all")]
-        public ActionResult<string> GetAll()
+        public ActionResult<string> GetAll([FromQuery] DateTime fromDate, DataFrequencyInterval dataFrequencyInterval)
         {
             _logger.LogInformation($"Logger works in GetAll");
             return Ok("all spots");

@@ -1,8 +1,11 @@
-using GK.Cryptoman.Hub.Validators;
 using GK.Cryptoman.Utilities.Extensions;
 using GK.Cryptoman.Utilities.Shared.Middleware.Exception;
-using FluentValidation;
 using System.Reflection;
+using GK.Cryptoman.Utilities.Shared.Middleware.Validation;
+using FluentValidation;
+using Microsoft.AspNetCore.Identity;
+using GK.Cryptoman.Hub.Model.Request;
+using GK.Cryptoman.Hub.Validators;
 
 internal class Program
 {
@@ -13,7 +16,6 @@ internal class Program
 
         // Configure logger
         builder.Logging.AddConsole();
-
         // Add services to the container.
         builder.Services.AddControllers();
 
@@ -23,6 +25,9 @@ internal class Program
         // Register binance http services
         builder.Services.RegisterBinanceHttpClients(builder.Configuration);
         builder.Services.RegisterValidators(Assembly.GetExecutingAssembly());
+
+        builder.Services.AddScoped<IValidator<SpotRequest>, SpotRequestValidator>();
+
 
         var app = builder.Build();
 
@@ -34,7 +39,8 @@ internal class Program
         }
 
         app.UseMiddleware<CustomErrorHandlerMiddleware>();
-        //app.UseMiddleware<CustomValidationHandlerMiddleware>();
+        app.UseMiddleware<CustomValidationHandlerMiddleware>();
+
 
         app.UseHttpsRedirection();
 

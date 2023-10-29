@@ -1,3 +1,4 @@
+using GK.Cryptoman.Hub.Model;
 using GK.Cryptoman.Utilities.Shared.Exception;
 using Microsoft.AspNetCore.Mvc;
 
@@ -5,7 +6,7 @@ namespace GK.Cryptoman.Hub.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PingController : ControllerBase
+    public class PingController : BaseController
     {
         private static readonly string[] Summaries = new[]
         {

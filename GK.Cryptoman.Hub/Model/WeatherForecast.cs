@@ -1,4 +1,4 @@
-namespace GK.Cryptoman.Hub
+namespace GK.Cryptoman.Hub.Model
 {
     public class WeatherForecast
     {

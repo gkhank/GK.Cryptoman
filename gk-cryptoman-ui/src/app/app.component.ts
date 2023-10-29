@@ -8,11 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public forecasts?: WeatherForecast[];
+    errorMessage: any;
 
   constructor(http: HttpClient) {
-    http.get<WeatherForecast[]>('/weatherforecast').subscribe(result => {
+    http.get<WeatherForecast[]>('https://localhost:58849/Ping').subscribe(result => {
       this.forecasts = result;
-    }, error => console.error(error));
+    }, error => this.errorMessage = error.Messages);
   }
 
   title = 'gk-cryptoman-ui';

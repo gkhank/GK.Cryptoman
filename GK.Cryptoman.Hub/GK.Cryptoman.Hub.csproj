@@ -7,6 +7,7 @@
     <UserSecretsId>75ea8117-504b-4fd6-82d9-2cce77c321be</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,10 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GK.Cryptoman.Utilities\GK.Cryptoman.Utilities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Model\Response\" />
   </ItemGroup>
 
 </Project>

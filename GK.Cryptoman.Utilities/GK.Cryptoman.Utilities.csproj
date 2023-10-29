@@ -1,51 +1,52 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <UserSecretsId>21551498-42ea-46b3-8812-618147beb7b4</UserSecretsId>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<UserSecretsId>21551498-42ea-46b3-8812-618147beb7b4</UserSecretsId>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="ApplicationPath.cs" />
-    <Compile Remove="Convert.cs" />
-    <Compile Remove="HashHandler.cs" />
-    <Compile Remove="Shared\Middleware\Validation\AbstractValidationHandlerMiddleware.cs" />
-    <Compile Remove="Shared\Middleware\Validation\CustomValidationHandlerMiddleware.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="ApplicationPath.cs" />
+		<Compile Remove="Shared\Middleware\ValidationFilters\BaseValidationFilter.cs" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <COMReference Include="{bee4bfec-6683-3e67-9167-3c0cbc68f40a}">
-      <WrapperTool>tlbimp</WrapperTool>
-      <VersionMinor>4</VersionMinor>
-      <VersionMajor>2</VersionMajor>
-      <Guid>bee4bfec-6683-3e67-9167-3c0cbc68f40a</Guid>
-    </COMReference>
-  </ItemGroup>
+	<ItemGroup>
+		<COMReference Include="{bee4bfec-6683-3e67-9167-3c0cbc68f40a}">
+			<WrapperTool>tlbimp</WrapperTool>
+			<VersionMinor>4</VersionMinor>
+			<VersionMajor>2</VersionMajor>
+			<Guid>bee4bfec-6683-3e67-9167-3c0cbc68f40a</Guid>
+		</COMReference>
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\.editorconfig" Link=".editorconfig" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Binance.Net" Version="9.1.5" />
-    <PackageReference Include="FluentValidation" Version="11.8.0" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="System.Diagnostics.EventLog" Version="7.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Binance.Net" Version="9.1.5" />
+		<PackageReference Include="FluentValidation" Version="11.8.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="6.0.0-preview.4.21253.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="System.Diagnostics.EventLog" Version="7.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\GK.Cryptoman.Model\GK.Cryptoman.Model.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\GK.Cryptoman.Model\GK.Cryptoman.Model.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Shared\Middleware\Validation\" />
-  </ItemGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
 
 </Project>

@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -30,8 +29,9 @@ namespace GK.Cryptoman.Utilities.Shared.Middleware.Validation
                     errorMessages.Select(error => error.ErrorMessage).ToArray(),
                     "Request validation errors occured. See error messages.");
             }
-
-            return (HttpStatusCode.OK, "All validators are OK!");
+            var okMessage = "All validators are OK!";
+            _logger.LogInformation(okMessage);
+            return (HttpStatusCode.OK, okMessage);
         }
     }
 }
