@@ -8,13 +8,13 @@ namespace GK.Cryptoman.Model.Response
 {
     public class SimplifiedExceptionResponse
     {
-        public SimplifiedExceptionResponse(string message, int customErrorCode)
+        public SimplifiedExceptionResponse(string[] messages, int customErrorCode)
         {
-            Message = message;
+            Messages = messages;
             CustomErrorCode = customErrorCode;
         }
 
-        public string Message { get; set; }
+        public string[] Messages { get; set; }
         public int CustomErrorCode { get; set; }
     }
 }

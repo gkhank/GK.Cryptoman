@@ -1,6 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using FluentValidation;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace GK.Cryptoman.Utilities.Extensions
 {
@@ -14,6 +15,11 @@ namespace GK.Cryptoman.Utilities.Extensions
             services.AddHttpClient<Binance.Net.Clients.SpotApi.BinanceSocketClientSpotApiTrading>();
             services.AddHttpClient<Binance.Net.Clients.SpotApi.BinanceSocketClientSpotApiExchangeData>();
             services.AddHttpClient<Binance.Net.Clients.SpotApi.BinanceSocketClientSpotApiAccount>();
+        }
+
+        public static void RegisterValidators(this IServiceCollection services, Assembly assembly)
+        {
+            services.AddValidatorsFromAssembly(assembly);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace GK.Cryptoman.Utilities.Shared.Middleware
+namespace GK.Cryptoman.Utilities.Shared.Middleware.Exception
 {
     /// <summary>
     /// Abstract handler for all exceptions.
@@ -19,7 +19,7 @@ namespace GK.Cryptoman.Utilities.Shared.Middleware
         /// </summary>
         /// <param name="exception">The actual exception</param>
         /// <returns>Tuple of HTTP status code and a message</returns>
-        public abstract (HttpStatusCode code, string message) GetResponse(System.Exception exception);
+        public abstract (HttpStatusCode code, string message) GetHttpExceptionResponse(System.Exception exception);
 
         public AbstractExceptionHandlerMiddleware(ILogger logger, RequestDelegate next)
         {
@@ -41,7 +41,7 @@ namespace GK.Cryptoman.Utilities.Shared.Middleware
                 response.ContentType = "application/json";
 
                 // get the response code and message
-                var (status, message) = GetResponse(exception);
+                var (status, message) = GetHttpExceptionResponse(exception);
                 response.StatusCode = (int)status;
                 await response.WriteAsync(message);
             }

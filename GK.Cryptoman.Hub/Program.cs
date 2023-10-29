@@ -1,5 +1,8 @@
+using GK.Cryptoman.Hub.Validators;
 using GK.Cryptoman.Utilities.Extensions;
-using GK.Cryptoman.Utilities.Shared.Middleware;
+using GK.Cryptoman.Utilities.Shared.Middleware.Exception;
+using FluentValidation;
+using System.Reflection;
 
 internal class Program
 {
@@ -13,12 +16,13 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddControllers();
+
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         // Register binance http services
         builder.Services.RegisterBinanceHttpClients(builder.Configuration);
-
+        builder.Services.RegisterValidators(Assembly.GetExecutingAssembly());
 
         var app = builder.Build();
 
@@ -30,6 +34,7 @@ internal class Program
         }
 
         app.UseMiddleware<CustomErrorHandlerMiddleware>();
+        //app.UseMiddleware<CustomValidationHandlerMiddleware>();
 
         app.UseHttpsRedirection();
 

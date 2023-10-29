@@ -2,12 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
+    <UserSecretsId>21551498-42ea-46b3-8812-618147beb7b4</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="ApplicationPath.cs" />
     <Compile Remove="Convert.cs" />
     <Compile Remove="HashHandler.cs" />
+    <Compile Remove="Shared\Middleware\Validation\AbstractValidationHandlerMiddleware.cs" />
+    <Compile Remove="Shared\Middleware\Validation\CustomValidationHandlerMiddleware.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +28,8 @@
 
   <ItemGroup>
     <PackageReference Include="Binance.Net" Version="9.1.5" />
+    <PackageReference Include="FluentValidation" Version="11.8.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
@@ -37,6 +42,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GK.Cryptoman.Model\GK.Cryptoman.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\Middleware\Validation\" />
   </ItemGroup>
 
 </Project>

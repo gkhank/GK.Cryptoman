@@ -1,3 +1,4 @@
+using GK.Cryptoman.Utilities.Shared.Exception;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GK.Cryptoman.Hub.Controllers
@@ -21,13 +22,19 @@ namespace GK.Cryptoman.Hub.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var retval = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+
+
+            if (retval.Any(x => x.TemperatureC < -10))
+                throw new ButtFreezingTemperatureException(System.Net.HttpStatusCode.NotAcceptable, 90001, null, "Butt freezing temperature detected");
+
+            return retval;
         }
     }
 }

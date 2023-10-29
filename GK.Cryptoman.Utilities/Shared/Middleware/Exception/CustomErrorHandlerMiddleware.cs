@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace GK.Cryptoman.Utilities.Shared.Middleware
+namespace GK.Cryptoman.Utilities.Shared.Middleware.Exception
 {
     public class CustomErrorHandlerMiddleware : AbstractExceptionHandlerMiddleware
     {
@@ -17,10 +17,11 @@ namespace GK.Cryptoman.Utilities.Shared.Middleware
             _logger = logger;
         }
 
-        public override (HttpStatusCode code, string message) GetResponse(System.Exception exception)
+        public override (HttpStatusCode code, string message) GetHttpExceptionResponse(System.Exception exception)
         {
             HttpStatusCode code = HttpStatusCode.Ambiguous;
             int customErrorCode = 0;
+            string[] messages = null;
             switch (exception)
             {
                 case KeyNotFoundException:
@@ -30,6 +31,7 @@ namespace GK.Cryptoman.Utilities.Shared.Middleware
                     var validationException = exception as ValidationException;
                     code = validationException.HttpErrorCode;
                     customErrorCode = validationException.CustomErrorCode;
+                    messages = validationException.Messages;
                     break;
                 case UnauthorizedAccessException:
                     code = HttpStatusCode.Unauthorized;
@@ -39,11 +41,22 @@ namespace GK.Cryptoman.Utilities.Shared.Middleware
                     or InvalidOperationException:
                     code = HttpStatusCode.BadRequest;
                     break;
+
+                case ButtFreezingTemperatureException:
+                    var buttFreezingTemperatureException = exception as ButtFreezingTemperatureException;
+                    code = buttFreezingTemperatureException.HttpErrorCode;
+                    customErrorCode = buttFreezingTemperatureException.CustomErrorCode;
+                    messages = buttFreezingTemperatureException.Messages;
+                    break;
                 default:
                     code = HttpStatusCode.InternalServerError;
                     break;
             }
-            return (code, JsonConvert.SerializeObject(new SimplifiedExceptionResponse(exception.Message, customErrorCode)));
+            return (
+                code, 
+                JsonConvert.SerializeObject(new SimplifiedExceptionResponse(
+                messages != null ? messages : new string[] { exception.Message },
+                customErrorCode)));
         }
     }
 }

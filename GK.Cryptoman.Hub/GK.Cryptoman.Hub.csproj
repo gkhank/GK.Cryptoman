@@ -21,4 +21,8 @@
     <ProjectReference Include="..\GK.Cryptoman.Utilities\GK.Cryptoman.Utilities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\Response\" />
+  </ItemGroup>
+
 </Project>
