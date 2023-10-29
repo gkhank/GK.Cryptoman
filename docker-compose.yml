@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  cryptoman.hub:
+    image: ${DOCKER_REGISTRY-}cryptoman-hub
+    build:
+      context: .
+      dockerfile: GK.Cryptoman.Hub/Dockerfile
+    networks: 
+      - default

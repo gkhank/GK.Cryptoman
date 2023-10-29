@@ -12,3 +12,10 @@ GK.Cryptoman.Model/obj
 GK.Cryptoman.Utilities/obj
 GK.Cryptoman.Web/bin
 GK.Cryptoman.Web/obj
+GK.Cryptoman.Hub/bin
+GK.Cryptoman.Hub/obj
+bin
+GK.Cryptoman.Tests/obj
+*/obj
+*/bin
+obj
