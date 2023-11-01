@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Net;
+﻿using System.Net;
 
 namespace GK.Cryptoman.Utilities.Shared.Exception
 {

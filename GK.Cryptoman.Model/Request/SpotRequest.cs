@@ -1,6 +1,6 @@
-﻿using GK.Cryptoman.Utilities.Shared.Model;
+﻿using System.Collections.Generic;
 
-namespace GK.Cryptoman.Hub.Model.Request
+namespace GK.Cryptoman.Model.Request
 {
     public class SpotRequest
     {

@@ -1,31 +1,17 @@
 ﻿using Newtonsoft.Json;
+using System.Security;
 
 namespace GK.Cryptoman.Model.Binance
 {
     public class BinanceApiConfiguration
     {
-        [JsonProperty("APIKey", NullValueHandling = NullValueHandling.Ignore)]
-        public string APIKey;
-
-        [JsonProperty("APISecret", NullValueHandling = NullValueHandling.Ignore)]
-        public string APISecret;
-
-        [JsonProperty("SpotAPIUrl", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpotAPIUrl;
-
-        [JsonProperty("SpotAPIWS", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpotAPIWS;
-
-        [JsonProperty("SpotAPIStream", NullValueHandling = NullValueHandling.Ignore)]
-        public string SpotAPIStream;
-
-        [JsonProperty("UseProxy", NullValueHandling = NullValueHandling.Ignore)]
-        public bool UseProxy;
-    }
-
-    public class ApplicationConfigurations
-    {
-        [JsonProperty("BinanceApiConfigurations", NullValueHandling = NullValueHandling.Ignore)]
-        public BinanceApiConfiguration BinanceSettings;
+        public string ApiKey { get; set; }
+        public string ApiSecret { get; set; }
+        public bool UseProxy { get; set; }
+        public string Environment { get; set; }
+        public string SpotApiKey { get; set; }
+        public string SpotApiSecret { get; set; }
+        public int RequestTimeoutSeconds { get; set; }
+        public double ReceiveWindowSeconds { get; set; }
     }
 }

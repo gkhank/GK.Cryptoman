@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using GK.Cryptoman.Hub.Model.Request;
+using GK.Cryptoman.Model.Request;
 
 namespace GK.Cryptoman.Hub.Validators
 {

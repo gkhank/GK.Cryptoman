@@ -1,6 +1,8 @@
-﻿namespace GK.Cryptoman.Hub.Model.Response
+﻿using System;
+
+namespace GK.Cryptoman.Hub.Model.Response
 {
-    public class SellResponse
+    public class BuyResponse
     {
         public Guid CurrencyId { get; set; }
         public Decimal Amount { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace GK.Cryptoman.Utilities.Shared.Model
+﻿namespace GK.Cryptoman.Model
 {
     public enum DataFrequencyInterval
     {

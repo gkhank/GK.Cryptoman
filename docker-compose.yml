@@ -3,8 +3,30 @@ version: '3.4'
 services:
   cryptoman.hub:
     image: ${DOCKER_REGISTRY-}cryptoman-hub
+    environment:
+     - TZ=Europe/Stockholm
+
     build:
       context: .
       dockerfile: GK.Cryptoman.Hub/Dockerfile
     networks: 
-      - default
+      wan:
+       ipv4_address: '192.168.1.203'
+      dmz:
+    dns: 
+    - 8.8.8.8
+    - 8.8.4.4
+    - 192.168.1.1  
+networks:
+  wan:
+    external: true
+    labels:
+      com.dmz.description: "External network that can be accessed from outside'"
+      com.dmz.department: "WAN"
+
+  dmz:
+    attachable: true
+    internal: true
+    labels:
+      com.dmz.description: "Internal network that can't be accessed from outside'"
+      com.dmz.department: "DMZ"

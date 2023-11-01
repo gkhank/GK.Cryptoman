@@ -1,5 +1,5 @@
-using GK.Cryptoman.Hub.Model.Request;
 using GK.Cryptoman.Hub.Model.Response;
+using GK.Cryptoman.Model.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GK.Cryptoman.Hub.Controllers

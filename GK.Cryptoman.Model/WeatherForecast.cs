@@ -1,3 +1,5 @@
+using System;
+
 namespace GK.Cryptoman.Hub.Model
 {
     public class WeatherForecast
