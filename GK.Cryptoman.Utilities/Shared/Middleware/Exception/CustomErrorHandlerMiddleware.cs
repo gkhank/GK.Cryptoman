@@ -39,6 +39,12 @@ namespace GK.Cryptoman.Utilities.Shared.Middleware.Exception
                     customErrorCode = binanceApiException.CustomErrorCode;
                     messages = binanceApiException.Messages;
                     break;
+                case BinanceWebSocketClientException:
+                    var binanceWebSocketClientException = exception as BinanceWebSocketClientException;
+                    code = binanceWebSocketClientException.HttpErrorCode;
+                    customErrorCode = binanceWebSocketClientException.CustomErrorCode;
+                    messages = binanceWebSocketClientException.Messages;
+                    break;
                 case UnauthorizedAccessException:
                     code = HttpStatusCode.Unauthorized;
                     break;

@@ -47,7 +47,8 @@ namespace GK.Cryptoman.Utilities.Extensions
 
         public static void RegisterRepositories(this IServiceCollection services)
         {
-            services.AddTransient<ISpotRepository, SpotRepository>();
+            services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<IMarketRepository, MarketRepository>();
         }
     }
 }

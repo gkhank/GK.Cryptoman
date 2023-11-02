@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GK.Cryptoman.Utilities.Repositories
 {
-    public interface ISpotRepository
+    public interface IAccountRepository
     {
         Task<BinanceAccountInfo> GetAccountInfo(CancellationToken token, bool ignoreZeroAmounts = true);
     }

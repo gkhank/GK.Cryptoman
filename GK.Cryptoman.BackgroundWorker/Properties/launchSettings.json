@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GK.Cryptoman.BackgroundWorker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

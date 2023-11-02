@@ -22,4 +22,8 @@
     <ProjectReference Include="..\GK.Cryptoman.Utilities\GK.Cryptoman.Utilities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="..\.dockerignore" />
+  </ItemGroup>
+
 </Project>

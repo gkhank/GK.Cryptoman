@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY-}cryptoman-hub
     environment:
      - TZ=Europe/Stockholm
-
+     - ASPNETCORE_URLS http://*:5000
     build:
       context: .
       dockerfile: GK.Cryptoman.Hub/Dockerfile
@@ -17,6 +17,15 @@ services:
     - 8.8.8.8
     - 8.8.4.4
     - 192.168.1.1  
+  cryptoman.backgroundworker:
+    image: ${DOCKER_REGISTRY-}cryptoman-backgroundworker
+    environment:
+     - TZ=Europe/Stockholm
+    build:
+      context: .
+      dockerfile: GK.Cryptoman.BackgroundWorker/Dockerfile
+    networks: 
+      dmz:
 networks:
   wan:
     external: true

@@ -3,13 +3,13 @@ using System.Net;
 
 namespace GK.Cryptoman.Utilities.Shared.Exception
 {
-    public class BinanceApiException : System.Exception
+    public class BinanceWebSocketClientException : System.Exception
     {
         public HttpStatusCode HttpErrorCode { get; private set; }
         public int CustomErrorCode { get; private set; }
         public string[] Messages { get; set; }
 
-        public BinanceApiException(HttpStatusCode? httpErrorCode, int? customErrorCode, string format, params string[] args) : base(TryParseMessage(format, args))
+        public BinanceWebSocketClientException(HttpStatusCode? httpErrorCode, int? customErrorCode, string format, params string[] args) : base(TryParseMessage(format, args))
         {
             HttpErrorCode = httpErrorCode.HasValue ? httpErrorCode.Value : HttpStatusCode.NotAcceptable;
             CustomErrorCode = customErrorCode.HasValue ? customErrorCode.Value : -1;
